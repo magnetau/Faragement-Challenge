@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/carListFrag"
+        android:name="com.example.faragementchallenge.fragments.CarListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_car_list" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoCL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLL"
+            tools:layout_editor_absoluteX="0dp">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/carInfoFrag"
+                android:name="com.example.faragementchallenge.fragments.CarInfoFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/fragment_car_info" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/ownerInfoFrag"
+                android:name="com.example.faragementchallenge.fragments.OwnerInfoFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:layout="@layout/fragment_owner_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <Button
+                android:id="@+id/carInfoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:text="@string/car_info" />
+
+            <Button
+                android:id="@+id/ownerInfoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:text="@string/owner_info" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
